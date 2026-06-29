@@ -1,11 +1,29 @@
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/Yo";
+import Experience from "./components/Experiencia";
+import Skills from "./components/Habilidades";
+import Projects from "./components/Proyectos";
+import Education from "./components/Educacion";
+import Contact from "./components/Contacto";
+import Footer from "./components/Footer";
+
 function App() {
   return (
-    <div className="flex items-center justify-center h-screen bg-slate-900">
-      <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-500">
-        ¡Tailwind + React funcionando, Fran!
-      </h1>
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary">
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Education />
+        <Contact />
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
