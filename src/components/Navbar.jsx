@@ -132,7 +132,7 @@ export default function Navbar() {
           }
         });
       },
-      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+      { rootMargin: "-20% 0px -70% 0px", threshold: 0 }
     );
 
     ids.forEach((id) => {
@@ -168,7 +168,12 @@ export default function Navbar() {
     setMobileOpen(false);
     const target = document.querySelector(href);
     if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+      const navbarHeight = 80;
+      const elementPosition = target.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - navbarHeight,
+        behavior: "smooth",
+      });
     }
   }, []);
 
@@ -185,18 +190,8 @@ export default function Navbar() {
         )}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-          {/* ── Logo / Nombre ── */}
-          <a
-            href="#inicio"
-            onClick={(e) => handleNavClick(e, "#inicio")}
-            className="group flex items-center gap-2 text-lg font-bold tracking-tight text-foreground transition-colors hover:text-primary"
-          >
-            {/* Ícono decorativo */}
-            <span className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground text-sm font-black transition-transform duration-300 group-hover:scale-110">
-              FA
-            </span>
-            <span className="hidden sm:inline">Francisca Arancibia</span>
-          </a>
+          {/* ── Espaciador para mantener centrado ── */}
+          <div className="w-8"></div>
 
           {/* ── Links desktop ── */}
           <ul className="hidden items-center gap-1 md:flex">

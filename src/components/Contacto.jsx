@@ -3,25 +3,41 @@ import cvData from "@/data/cv-data";
 import { cn } from "@/lib/utils";
 
 export default function Contact() {
-  const { email, phone, location, linkedin, github } = cvData.personal;
+  const { email, location, linkedin, github } = cvData.personal;
   
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simular envío de formulario
-    setTimeout(() => {
+    try {
+      const response = await fetch("https://formspree.io/f/xzdlvopp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        })
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        alert("Hubo un error al enviar el mensaje. Por favor intenta de nuevo.");
+      }
+    } catch (error) {
+      alert("Hubo un error al enviar el mensaje. Verifica tu conexión a internet.");
+    } finally {
       setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormData({ name: "", email: "", message: "" });
-      
-      // Ocultar mensaje de éxito después de 5 segundos
-      setTimeout(() => setIsSuccess(false), 5000);
-    }, 1500);
+    }
   };
 
   const handleChange = (e) => {
@@ -40,7 +56,7 @@ export default function Contact() {
           </h2>
           <div className="mt-2 h-1.5 w-20 rounded-full bg-gradient-to-r from-primary to-accent" />
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
-            ¿Tienes una propuesta de trabajo, un proyecto en mente o simplemente quieres saludar? 
+            ¿Tienes una propuesta de trabajo o algun un proyecto en mente? 
             ¡Me encantaría escucharte!
           </p>
         </div>
@@ -66,19 +82,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Teléfono */}
-                <div className="flex items-center gap-4">
-                  <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-muted-foreground">Teléfono</p>
-                    <a href={`tel:${phone.replace(/\s+/g, '')}`} className="text-base font-medium text-foreground transition-colors hover:text-primary">
-                      {phone}
-                    </a>
-                  </div>
-                </div>
-
                 {/* Ubicación */}
                 <div className="flex items-center gap-4">
                   <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -97,15 +100,6 @@ export default function Contact() {
               <div className="mt-10 pt-8 border-t border-border">
                 <p className="text-sm font-medium text-muted-foreground mb-4">Sígueme en redes sociales</p>
                 <div className="flex gap-4">
-                  <a 
-                    href={linkedin} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex size-10 items-center justify-center rounded-full bg-secondary text-secondary-foreground transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:-translate-y-1"
-                    aria-label="LinkedIn"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                  </a>
                   <a 
                     href={github} 
                     target="_blank" 

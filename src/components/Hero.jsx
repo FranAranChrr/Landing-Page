@@ -1,8 +1,33 @@
 import cvData from "@/data/cv-data";
 import { cn } from "@/lib/utils";
+import confetti from "canvas-confetti";
 
 export default function Hero() {
   const { name, title, subtitle, description } = cvData.personal;
+
+  const handleDownloadCV = (e) => {
+    // Lanzar confeti 🎉
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (rect.left + rect.width / 2) / window.innerWidth;
+    const y = (rect.top + rect.height / 2) / window.innerHeight;
+
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { x, y },
+      colors: ["#e91e8c", "#ff6bb5", "#c2185b", "#f48fb1", "#880e4f"],
+    });
+
+    // Segunda ráfaga ligeramente después
+    setTimeout(() => {
+      confetti({
+        particleCount: 50,
+        spread: 100,
+        origin: { x, y: y - 0.1 },
+        colors: ["#e91e8c", "#ff6bb5", "#c2185b", "#f48fb1", "#880e4f"],
+      });
+    }, 200);
+  };
 
   return (
     <section
@@ -16,19 +41,9 @@ export default function Hero() {
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          
-          {/* Badge animado */}
-          <div className="animate-fade-in-up mb-8 inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-            <span className="relative flex size-2 mr-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex size-2 rounded-full bg-primary"></span>
-            </span>
-            Disponible para nuevas oportunidades
-          </div>
-
           {/* Nombre con gradiente */}
           <h1 className="animate-fade-in-up animation-delay-100 mb-4 text-5xl font-black tracking-tight sm:text-7xl">
-            Hola, soy{" "}
+            Holaa, soy{" "}
             <span className="bg-gradient-to-r from-primary via-accent to-radical-300 bg-clip-text text-transparent">
               {name.split(" ")[0]}
             </span>
@@ -40,7 +55,7 @@ export default function Hero() {
           </h2>
           
           <p className="animate-fade-in-up animation-delay-300 mx-auto mb-10 max-w-2xl text-lg text-muted-foreground sm:text-xl leading-relaxed">
-            {subtitle}. {description}
+            {subtitle ? `${subtitle}. ` : ""}{description}
           </p>
 
           {/* Botones de acción */}
@@ -57,6 +72,7 @@ export default function Hero() {
             <a
               href="/CV_Francisca_Arancibia_Chaparro.pdf"
               download
+              onClick={handleDownloadCV}
               className={cn(
                 "inline-flex h-12 items-center justify-center rounded-full border-2 border-border bg-card px-8 text-base font-medium text-foreground transition-all hover:border-primary hover:text-primary hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background"
               )}
