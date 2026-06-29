@@ -8,28 +8,24 @@ const cvData = {
   personal: {
     name: "Francisca Arancibia Chaparro",
     title: "Desarrolladora Full-Stack",
-    subtitle: "Apasionada por crear soluciones web modernas y eficientes",
+  
     description:
-      "Desarrolladora de software con experiencia en tecnologías web modernas. " +
-      "Me especializo en construir aplicaciones escalables con React, Node.js y " +
-      "bases de datos relacionales. Disfruto resolver problemas complejos y " +
-      "trabajar en equipo para entregar productos de alta calidad.",
-    photo: "",
-    email: "francisca.arancibia@email.com",
-    phone: "+56 9 75588869",
+      "Comprometida con crear soluciones web modernas, eficientes y listas para escalar. " ,
+    photo: "/perfil.png",
+    email: "fran.arancibiach@gmail.com",
     linkedin: "https://linkedin.com/in/francisca-arancibia",
-    github: "https://github.com/francisca-arancibia",
+    github: "https://github.com/FranAranChrr",
     location: "Valparaiso, Chile",
   },
 
   /* ───────────── EXPERIENCIA LABORAL ───────────── */
   experience: [
     {
-      company: "CITT - Duoc UC (Proyecto de Tesis)",
-      role: "Desarrolladora Full-Stack",
+      company: "CITT - Duoc UC",
+      role: "Desarrolladora Full-Stack – Proyecto de Tesis",
       period: "Marzo 2025 – Junio 2025",
       description:
-        "Desarrollo del sistema de reservas para el Centro de Innovación y " +
+        "Se desarrollo el sistema de gestion de reservas e inventario para el Centro de Innovación y " +
         "Transferencia Tecnológica (CITT). Implementación de interfaces de usuario " +
         "con React y Tailwind CSS, diseño de API REST con Node.js, y gestión de " +
         "bases de datos con PostgreSQL. Despliegue del entorno de desarrollo y " +
@@ -51,21 +47,18 @@ const cvData = {
       { name: "React", level: 85 },
       { name: "JavaScript", level: 90 },
       { name: "Tailwind CSS", level: 85 },
-      { name: "Node.js", level: 75 },
-      { name: "Python", level: 65 },
+      { name: "Java", level: 70 },
       { name: "PostgreSQL", level: 70 },
       { name: "Docker", level: 60 },
-      { name: "Git", level: 80 },
     ],
     tools: [
       "VS Code",
-      "Figma",
-      "Postman",
-      "Docker Desktop",
-      "pgAdmin",
       "GitHub",
       "Jira",
-      "Notion",
+      "Swagger",
+
+      "IntelliJ",
+      "Vite",
     ],
     soft: [
       "Trabajo en equipo",
@@ -81,10 +74,11 @@ const cvData = {
     {
       title: "Sistema de Reservas CITT",
       description:
-        "Aplicación web completa para gestionar las reservas de espacios y " +
-        "equipos del Centro de Innovación y Transferencia Tecnológica de Duoc UC. " +
-        "Incluye autenticación de usuarios, calendario interactivo, notificaciones " +
-        "por correo y panel de administración.",
+        "Desarrollamos en equipo el sistema de reservas e inventario para el CITT de Duoc UC. " +
+        "Implementamos una arquitectura cliente-servidor, donde aporté en la construcción de una " +
+        "API REST en Node.js encargada de la lógica. Manejamos los datos de forma segura " +
+        "con PostgreSQL y levantamos el entorno completo usando contenedores en Docker para " +
+        "asegurar que todo fuera fácil de escalar y mantener.",
       technologies: [
         "React",
         "Tailwind CSS",
@@ -92,9 +86,9 @@ const cvData = {
         "PostgreSQL",
         "Docker",
       ],
-      image: "",
-      github: "https://github.com/francisca-arancibia/citt-reservas",
-      live: "",
+      image: "/citt-reservas.png",
+      github: "",
+      live: "https://sistema-de-reservas-citt.vercel.app/",
     },
     {
       title: "Portfolio Personal",
@@ -103,7 +97,7 @@ const cvData = {
         "presentar mi perfil profesional, proyectos y habilidades. Incluye " +
         "modo oscuro, animaciones suaves y diseño completamente responsivo.",
       technologies: ["React", "Tailwind CSS", "Vite", "JavaScript"],
-      image: "",
+      image: "/perfil.png",
       github: "https://github.com/francisca-arancibia/portfolio",
       live: "",
     }
@@ -119,6 +113,15 @@ const cvData = {
         "Formación integral en desarrollo de software, bases de datos, redes " +
         "y gestión de proyectos TI. Participación activa en proyectos prácticos " +
         "y colaboración con el CITT en iniciativas de innovación tecnológica.",
+    },
+    {
+      institution: "Duoc UC",
+      degree: "Bootcamp: IA Aplicada a la Gestión Logística",
+      period: "2026",
+      description:
+        "Formación complementaria de 18 horas certificadas enfocada en la " +
+        "aplicación práctica de la Inteligencia Artificial para la resolución " +
+        "de problemas en la gestión logística.",
     }
   ],
 };
