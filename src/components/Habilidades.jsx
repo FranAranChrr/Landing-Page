@@ -62,7 +62,7 @@ export default function Skills() {
 
   return (
     <section id="habilidades" className="py-24 sm:py-32 bg-secondary/30 dark:bg-transparent">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[90rem]">
         
         {/* Título de sección */}
         <div className="mb-16 md:mb-24 flex flex-col items-center text-center">
@@ -195,7 +195,7 @@ export default function Skills() {
             {soft.map((skill, index) => (
               <span 
                 key={index}
-                className="inline-flex items-center rounded-full bg-background border border-border px-5 py-2.5 text-sm font-medium text-muted-foreground transition-all duration-300 hover:border-primary hover:text-primary hover:shadow-md hover:-translate-y-0.5"
+                className="inline-flex items-center rounded-full bg-background border border-border px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-medium text-muted-foreground transition-all duration-300 hover:border-primary hover:text-primary hover:shadow-md hover:-translate-y-1"
               >
                 {skill}
               </span>

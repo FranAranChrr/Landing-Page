@@ -6,7 +6,7 @@ export default function About() {
 
   return (
     <section id="sobre-mi" className="py-24 sm:py-32 bg-secondary/30 dark:bg-transparent">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[90rem]">
         
         {/* Título de sección */}
         <div className="mb-16 md:mb-24 flex flex-col items-center md:items-start text-center md:text-left">
