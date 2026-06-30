@@ -1,16 +1,66 @@
-# React + Vite
+#  Portafolio Personal - Francisca Arancibia Chaparro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Un portafolio web moderno, interactivo y  responsivo.
 
-Currently, two official plugins are available:
+##  Características Principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Diseño Moderno y Limpio:** Interfaz gráfica atractiva con paleta de colores personalizada.
 
-## React Compiler
+- **Responsive Design:** Adaptable a todo tipo de pantallas (móviles, tablets y escritorio).
+- **Animaciones Suaves:** Transiciones fluidas, animaciones de carga y un botón interactivo con confeti al descargar el currículum.
+- **Formulario de Contacto Funcional:** Incluye validaciones dinámicas de campos vacíos en tiempo real e integración con Formspree para envío real de correos. Modal flotante y personalizado para el manejo de errores.
+- **Componentización:** Arquitectura limpia usando componentes de React para cada sección (Hero, Sobre Mí, Experiencia, Habilidades, Proyectos, Educación, Contacto).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##  Stack Tecnológico
 
-## Expanding the ESLint configuration
+Este proyecto fue construido utilizando las siguientes tecnologías modernas:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **[React 18](https://react.dev/)**: Biblioteca de JavaScript para construir interfaces de usuario.
+- **[Vite](https://vitejs.dev/)**: Servidor de desarrollo local.
+- **[Tailwind CSS v3](https://tailwindcss.com/)**: Framework de CSS.
+- **[canvas-confetti](https://www.npmjs.com/package/canvas-confetti)**: Librería para el efecto visual de confetti.
+
+## Estructura del Proyecto
+
+El código fuente está organizado de la siguiente manera:
+
+```text
+src/
+├── components/       # Componentes reutilizables y secciones 
+├── data/             # Archivos de datos estáticos 
+├── lib/              # Funciones de utilidad 
+├── pages/            # Páginas principales 
+├── App.jsx           # Componente raíz
+└── index.css         # Estilos globales y configuración de variables
+```
+
+##  Instalación y Uso Local
+
+Para correr este proyecto en tu entorno local, sigue estos pasos:
+
+1. **Clona el repositorio**
+   ```bash
+   git clone https://github.com/FranAranChrr/Landing-Page.git
+   ```
+
+2. **Ingresa al directorio del proyecto**
+   ```bash
+   cd Landing-Page
+   ```
+
+3. **Instala las dependencias**
+   ```bash
+   npm install
+   ```
+
+4. **Inicia el servidor de desarrollo**
+   ```bash
+   npm run dev
+   ```
+
+5. **Abre tu navegador** en la dirección indicada en la terminal (usualmente `http://localhost:5173`).
+
+
+
+---
+
