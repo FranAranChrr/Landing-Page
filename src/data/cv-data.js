@@ -98,7 +98,7 @@ const cvData = {
         "modo oscuro, animaciones suaves y diseño completamente responsivo.",
       technologies: ["React", "Tailwind CSS", "Vite", "JavaScript"],
       image: "/perfil.png",
-      github: "https://github.com/francisca-arancibia/portfolio",
+      github: "https://github.com/FranAranChrr/Landing-Page.git",
       live: "",
     }
   ],
