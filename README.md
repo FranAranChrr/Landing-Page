@@ -1,12 +1,8 @@
-# 🌟 Portafolio Personal - Francisca Arancibia Chaparro
-
-Analista Programadora con conocimientos en desarrollo de páginas web y aplicaciones. Manejo lenguajes como Java y Python, utilizando herramientas como IntelliJ IDEA y control de versiones con GitHub. Cuento con conocimientos en programación orientada a objetos (POO). Participé en el desarrollo de una página web y una aplicación para una empresa dedicada a la venta de insumos gamer como proyecto académico. Me interesa el área de Machine Learning, tengo conocimientos básicos en modelos predictivos y análisis de datos. Me gusta trabajar de forma responsable y organizada, aportando al equipo y cumpliendo con los objetivos.
-
----
+# Portafolio Personal - Francisca Arancibia Chaparro
 
 Un portafolio web moderno, interactivo y responsivo.
 
-## 🚀 Características Principales
+## Características Principales
 
 - **Diseño Moderno y Limpio:** Interfaz gráfica atractiva con paleta de colores personalizada.
 - **Responsive Design:** Adaptable a todo tipo de pantallas (móviles, tablets y escritorio).
@@ -14,7 +10,7 @@ Un portafolio web moderno, interactivo y responsivo.
 - **Formulario de Contacto Funcional:** Incluye validaciones dinámicas de campos vacíos en tiempo real e integración con Formspree para envío real de correos. Modal flotante y personalizado para el manejo de errores.
 - **Componentización:** Arquitectura limpia usando componentes de React para cada sección (Hero, Sobre Mí, Experiencia, Habilidades, Proyectos, Educación, Contacto).
 
-## 🛠️ Stack Tecnológico
+## Stack Tecnológico
 
 Este proyecto fue construido utilizando las siguientes tecnologías modernas:
 
@@ -23,7 +19,7 @@ Este proyecto fue construido utilizando las siguientes tecnologías modernas:
 - **[Tailwind CSS v3](https://tailwindcss.com/)**: Framework de CSS.
 - **[canvas-confetti](https://www.npmjs.com/package/canvas-confetti)**: Librería para el efecto visual de confetti.
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 El código fuente está organizado de la siguiente manera:
 
@@ -37,7 +33,7 @@ src/
 └── index.css         # Estilos globales y configuración de variables
 ```
 
-## ⚙️ Instalación y Uso Local
+## Instalación y Uso Local
 
 Para correr este proyecto en tu entorno local, sigue estos pasos:
 
