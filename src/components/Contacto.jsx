@@ -6,11 +6,34 @@ export default function Contact() {
   const { email, location, linkedin, github } = cvData.personal;
   
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [modalMsg, setModalMsg] = useState("");
+
+  const triggerModal = (msg) => {
+    setModalMsg(msg);
+    setShowModal(true);
+    setTimeout(() => {
+      setShowModal(false);
+    }, 3000);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Validaciones
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Ingresa tu nombre";
+    if (!formData.email.trim()) newErrors.email = "Ingresa tu correo";
+    if (!formData.message.trim()) newErrors.message = "Ingresa un mensaje para enviar";
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
     setIsSubmitting(true);
     
     try {
@@ -31,10 +54,10 @@ export default function Contact() {
         setFormData({ name: "", email: "", message: "" });
         setTimeout(() => setIsSuccess(false), 5000);
       } else {
-        alert("Hubo un error al enviar el mensaje. Por favor intenta de nuevo.");
+        triggerModal("Hubo un error al enviar el mensaje. Por favor intenta de nuevo.");
       }
     } catch (error) {
-      alert("Hubo un error al enviar el mensaje. Verifica tu conexión a internet.");
+      triggerModal("Hubo un error al enviar el mensaje. Verifica tu conexión a internet.");
     } finally {
       setIsSubmitting(false);
     }
@@ -43,11 +66,16 @@ export default function Contact() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    // Limpiar error al escribir
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: "" }));
+    }
   };
 
   return (
-    <section id="contacto" className="py-24 sm:py-32">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+    <>
+      <section id="contacto" className="py-24 sm:py-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[90rem]">
         
         {/* Título de sección */}
         <div className="mb-16 md:mb-24 flex flex-col items-center md:items-start text-center md:text-left">
@@ -55,9 +83,8 @@ export default function Contact() {
             Ponte en <span className="text-primary">Contacto</span>
           </h2>
           <div className="mt-2 h-1.5 w-20 rounded-full bg-gradient-to-r from-primary to-accent" />
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
-            ¿Tienes una propuesta de trabajo o algun un proyecto en mente? 
-            ¡Me encantaría escucharte!
+          <p className="mt-6 text-lg text-muted-foreground max-w-none">
+            ¿Tienes una propuesta de trabajo o algun un proyecto en mente? ¡Me encantaría escucharte!
           </p>
         </div>
 
@@ -127,7 +154,7 @@ export default function Contact() {
                 <p className="text-muted-foreground">Gracias por contactarme. Te responderé lo antes posible.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">Nombre</label>
                   <input
@@ -136,10 +163,13 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    required
-                    className="w-full rounded-lg border border-input bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className={cn(
+                      "w-full rounded-lg border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:border-transparent transition-all",
+                      errors.name ? "border-primary focus:ring-primary" : "border-input focus:ring-primary"
+                    )}
                     placeholder="Tu nombre completo"
                   />
+                  {errors.name && <p className="mt-2 text-sm font-medium text-primary animate-in fade-in slide-in-from-top-1">{errors.name}</p>}
                 </div>
                 
                 <div>
@@ -150,10 +180,13 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    required
-                    className="w-full rounded-lg border border-input bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className={cn(
+                      "w-full rounded-lg border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:border-transparent transition-all",
+                      errors.email ? "border-primary focus:ring-primary" : "border-input focus:ring-primary"
+                    )}
                     placeholder="tu@email.com"
                   />
+                  {errors.email && <p className="mt-2 text-sm font-medium text-primary animate-in fade-in slide-in-from-top-1">{errors.email}</p>}
                 </div>
                 
                 <div>
@@ -163,11 +196,14 @@ export default function Contact() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    required
                     rows={4}
-                    className="w-full resize-y rounded-lg border border-input bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className={cn(
+                      "w-full resize-y rounded-lg border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:border-transparent transition-all",
+                      errors.message ? "border-primary focus:ring-primary" : "border-input focus:ring-primary"
+                    )}
                     placeholder="¿En qué te puedo ayudar?"
                   />
+                  {errors.message && <p className="mt-2 text-sm font-medium text-primary animate-in fade-in slide-in-from-top-1">{errors.message}</p>}
                 </div>
                 
                 <button
@@ -195,5 +231,22 @@ export default function Contact() {
         </div>
       </div>
     </section>
+
+      {/* Modal de Warning */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/60 backdrop-blur-sm animate-in fade-in duration-300">
+          <div className="bg-card border-2 border-primary shadow-2xl shadow-primary/20 rounded-2xl p-6 md:p-8 max-w-sm w-full flex flex-col items-center text-center animate-in zoom-in-95 duration-300">
+            <div className="size-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <p className="text-muted-foreground font-medium">{modalMsg}</p>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
