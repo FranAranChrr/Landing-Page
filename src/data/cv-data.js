@@ -7,15 +7,15 @@ const cvData = {
   /* ───────────── INFORMACIÓN PERSONAL ───────────── */
   personal: {
     name: "Francisca Arancibia Chaparro",
-    title: "Desarrolladora Full-Stack",
+    title: "Analista Programadora - Full Stack Developer",
   
     description:
-      "Comprometida con crear soluciones web modernas, eficientes y listas para escalar. " ,
+      "Analista Programadora egresada de Duoc UC orientada al desarrollo web. Cuento con sólida experiencia práctica en la creación de aplicaciones web utilizando Java y TypeScript, con especial interés en el área de Machine Learning.",
     photo: "/perfil.png",
     email: "fran.arancibiach@gmail.com",
     linkedin: "https://linkedin.com/in/francisca-arancibia",
     github: "https://github.com/FranAranChrr",
-    location: "Valparaiso, Chile",
+    location: "Valparaíso, Chile",
   },
 
   /* ───────────── EXPERIENCIA LABORAL ───────────── */
@@ -25,7 +25,7 @@ const cvData = {
       role: "Desarrolladora Full-Stack – Proyecto de Tesis",
       period: "Marzo 2025 – Junio 2025",
       description:
-        "Se desarrollo el sistema de gestion de reservas e inventario para el Centro de Innovación y " +
+        "Se desarrolló el sistema de gestión de reservas e inventario para el Centro de Innovación y " +
         "Transferencia Tecnológica (CITT). Implementación de interfaces de usuario " +
         "con React y Tailwind CSS, diseño de API REST con Node.js, y gestión de " +
         "bases de datos con PostgreSQL. Despliegue del entorno de desarrollo y " +
@@ -56,7 +56,6 @@ const cvData = {
       "GitHub",
       "Jira",
       "Swagger",
-
       "IntelliJ",
       "Vite",
     ],
@@ -100,6 +99,18 @@ const cvData = {
       image: "/perfil.png",
       github: "https://github.com/FranAranChrr/Landing-Page.git",
       live: "",
+    },
+    {
+      title: "Clasificador de Dígitos MNIST — CRISP-DM",
+      description:
+        "Análisis con metodología CRISP-DM para clasificar dígitos " +
+        "utilizando la base de datos MNIST. Se implementó el modelo de Gradient Boosting " +
+        "con normalización, evaluación de sobreajuste, matriz de confusión " +
+        "y despliegue en tiempo real mediante captura de cámara web en Google Colab.",
+      technologies: ["Python", "Scikit-Learn", "OpenCV", "NumPy", "Matplotlib"],
+      image: "/mnist-crisp-dm.png",
+      github: "",
+      live: "https://colab.research.google.com/drive/1MDqShFAeuVpfUkYiVq_BxJt2Po8Zi8FJ?usp=sharing",
     }
   ],
 
@@ -108,11 +119,20 @@ const cvData = {
     {
       institution: "Duoc UC",
       degree: "Analista Programador",
-      period: "2023 – 2026",
+      period: "2024 – 2026",
       description:
         "Formación integral en desarrollo de software, bases de datos, redes " +
         "y gestión de proyectos TI. Participación activa en proyectos prácticos " +
         "y colaboración con el CITT en iniciativas de innovación tecnológica.",
+    },
+    {
+      institution: "Pontificia Universidad Católica de Chile",
+      degree: "Diplomado en Inteligencia Artificial",
+      period: "2026 – En curso",
+      description:
+        "Diplomado enfocado en fundamentos y aplicaciones de la Inteligencia Artificial, " +
+        "abarcando aprendizaje automático, redes neuronales y análisis de datos " +
+        "para la resolución de problemas reales.",
     },
     {
       institution: "Duoc UC",

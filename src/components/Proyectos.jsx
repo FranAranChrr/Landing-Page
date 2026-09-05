@@ -11,7 +11,7 @@ export default function Projects() {
         {/* Título de sección */}
         <div className="mb-16 md:mb-24 flex flex-col items-center md:items-start text-center md:text-left">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
-            Proyectos <span className="text-primary">Destacados</span>
+            Proyectos
           </h2>
           <div className="mt-2 h-1.5 w-20 rounded-full bg-gradient-to-r from-primary to-accent" />
         </div>

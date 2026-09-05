@@ -1,22 +1,33 @@
-# Dependencies
+# Dependencias (¡Lo más importante!)
 node_modules/
 
-# Build output
-dist/
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Environment variables
+# Build / Producción
+dist/
+dist-ssr/
+
+# Variables de entorno
 .env
 .env.local
 .env.*.local
 
-# IDE
+# Editores de código e IDEs
 .vscode/
 .idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# OS files
+# Archivos del Sistema Operativo
 .DS_Store
 Thumbs.db
-
-# Logs
-*.log
-npm-debug.log*
