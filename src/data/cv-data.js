@@ -15,7 +15,7 @@ const cvData = {
     email: "fran.arancibiach@gmail.com",
     linkedin: "https://linkedin.com/in/francisca-arancibia",
     github: "https://github.com/FranAranChrr",
-    location: "Valparaiso, Chile",
+    location: "Valparaíso, Chile",
   },
 
   /* ───────────── EXPERIENCIA LABORAL ───────────── */
@@ -25,7 +25,7 @@ const cvData = {
       role: "Desarrolladora Full-Stack – Proyecto de Tesis",
       period: "Marzo 2025 – Junio 2025",
       description:
-        "Se desarrollo el sistema de gestion de reservas e inventario para el Centro de Innovación y " +
+        "Se desarrolló el sistema de gestión de reservas e inventario para el Centro de Innovación y " +
         "Transferencia Tecnológica (CITT). Implementación de interfaces de usuario " +
         "con React y Tailwind CSS, diseño de API REST con Node.js, y gestión de " +
         "bases de datos con PostgreSQL. Despliegue del entorno de desarrollo y " +

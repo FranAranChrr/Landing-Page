@@ -55,19 +55,19 @@ export default function About() {
             <div className="prose prose-lg dark:prose-invert text-muted-foreground">
               <p className="leading-relaxed">
                 ¡Hola! Soy Francisca, Desarrolladora Full-Stack.
-                 transformo desafíos técnicos en soluciones web limpias, eficientes e intuitivas.
+                 Transformo desafíos técnicos en soluciones web limpias, eficientes e intuitivas.
               </p>
               
               <p className="leading-relaxed mt-4">
-                Mi objetivo es cubrir las necesidades del proyecto desde desde la estructuración de la lógica del servidor hasta la optimización de los componentes. 
+                Mi objetivo es cubrir las necesidades del proyecto desde la estructuración de la lógica del servidor hasta la optimización de los componentes. 
                 Mi meta es asegurar que cada plataforma sea rápida, segura y responda de manera óptima bajo cualquier escenario. 
-                priorizo siempre la calidad del producto final y la eficiencia del sistema sobre las soluciones rápidas.
+                Priorizo siempre la calidad del producto final y la eficiencia del sistema sobre las soluciones rápidas.
               </p>
 
               <p className="leading-relaxed mt-4">
                 Me interesa el área de Machine Learning, tengo conocimientos básicos en modelos predictivos
                 y análisis de datos. Me gusta trabajar de forma responsable y organizada, aportando al equipo y
-                cumpliendo con los objetivos
+                cumpliendo con los objetivos.
               </p>
             </div>
 

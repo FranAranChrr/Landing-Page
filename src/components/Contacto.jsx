@@ -84,7 +84,7 @@ export default function Contact() {
           </h2>
           <div className="mt-2 h-1.5 w-20 rounded-full bg-gradient-to-r from-primary to-accent" />
           <p className="mt-6 text-lg text-muted-foreground max-w-none">
-            ¿Tienes una propuesta de trabajo o algun un proyecto en mente? ¡Me encantaría escucharte!
+            ¿Tienes una propuesta de trabajo o algún proyecto en mente? ¡Me encantaría escucharte!
           </p>
         </div>
 
