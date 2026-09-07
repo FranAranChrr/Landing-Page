@@ -25,9 +25,68 @@ export default function Contact() {
     
     // Validaciones
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Ingresa tu nombre";
-    if (!formData.email.trim()) newErrors.email = "Ingresa tu correo";
-    if (!formData.message.trim()) newErrors.message = "Ingresa un mensaje para enviar";
+    const numericOnlyRegex = /^\d+$/;
+    const isRepeatedChar = (str) => /^(.)\1+$/i.test(str.replace(/\s+/g, ""));
+
+    // Validación Nombre
+    const trimmedName = formData.name.trim();
+    if (!trimmedName) {
+      newErrors.name = "Ingresa tu nombre";
+    } else if (trimmedName.length < 4) {
+      newErrors.name = "El nombre debe tener al menos 4 caracteres";
+    } else if (numericOnlyRegex.test(trimmedName)) {
+      newErrors.name = "El nombre no puede contener solo números";
+    } else if (isRepeatedChar(trimmedName)) {
+      newErrors.name = "Ingresa un nombre válido";
+    }
+    
+    // Validación Correo
+    const validateEmail = (email) => {
+      const emailTrimmed = email.trim().toLowerCase();
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!emailRegex.test(emailTrimmed)) return false;
+
+      const [username, domain] = emailTrimmed.split("@");
+      if (!username || !domain) return false;
+
+      // Bloquear nombres de usuario demasiado cortos o con caracteres repetidos
+      if (username.length < 4 || /^(.)\1+$/.test(username)) return false;
+
+      const domainParts = domain.split(".");
+      const domainName = domainParts[0];
+      const tld = domainParts.slice(1).join(".");
+
+      // Bloquear dominios ficticios
+      if (domainName.length < 2 || /^(.)\1+$/.test(domainName)) return false;
+
+      // Lista de dominios falsos/spam comunes bloqueados
+      const blockedDomains = ["test.com", "example.com", "asdf.com", "dsdh.com", "aaa.com", "qwerty.com", "fake.com"];
+      if (blockedDomains.includes(domain)) return false;
+
+      const validTLDs = ["com", "cl", "org", "net", "edu", "gov", "co", "io", "es", "dev", "app", "info", "biz", "us", "uk", "me"];
+      if (!validTLDs.includes(tld)) return false;
+
+      return true;
+    };
+
+    const trimmedEmail = formData.email.trim();
+    if (!trimmedEmail) {
+      newErrors.email = "Ingresa tu correo";
+    } else if (!validateEmail(trimmedEmail)) {
+      newErrors.email = "Ingresa un correo electrónico válido (ej: usuario@gmail.com)";
+    }
+
+    // Validación Mensaje
+    const trimmedMessage = formData.message.trim();
+    if (!trimmedMessage) {
+      newErrors.message = "Ingresa un mensaje para enviar";
+    } else if (trimmedMessage.length < 10) {
+      newErrors.message = "El mensaje debe tener al menos 10 caracteres";
+    } else if (numericOnlyRegex.test(trimmedMessage)) {
+      newErrors.message = "El mensaje no puede contener solo números";
+    } else if (isRepeatedChar(trimmedMessage)) {
+      newErrors.message = "Ingresa un mensaje con contenido válido";
+    }
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
