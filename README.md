@@ -1,17 +1,16 @@
-#  Portafolio Personal - Francisca Arancibia Chaparro
+# Portafolio Personal - Francisca Arancibia Chaparro
 
-Un portafolio web moderno, interactivo y  responsivo.
+Un portafolio web moderno, interactivo y responsivo.
 
-##  Características Principales
+## Características Principales
 
 - **Diseño Moderno y Limpio:** Interfaz gráfica atractiva con paleta de colores personalizada.
-
 - **Responsive Design:** Adaptable a todo tipo de pantallas (móviles, tablets y escritorio).
 - **Animaciones Suaves:** Transiciones fluidas, animaciones de carga y un botón interactivo con confeti al descargar el currículum.
 - **Formulario de Contacto Funcional:** Incluye validaciones dinámicas de campos vacíos en tiempo real e integración con Formspree para envío real de correos. Modal flotante y personalizado para el manejo de errores.
 - **Componentización:** Arquitectura limpia usando componentes de React para cada sección (Hero, Sobre Mí, Experiencia, Habilidades, Proyectos, Educación, Contacto).
 
-##  Stack Tecnológico
+## Stack Tecnológico
 
 Este proyecto fue construido utilizando las siguientes tecnologías modernas:
 
@@ -34,7 +33,7 @@ src/
 └── index.css         # Estilos globales y configuración de variables
 ```
 
-##  Instalación y Uso Local
+## Instalación y Uso Local
 
 Para correr este proyecto en tu entorno local, sigue estos pasos:
 
@@ -59,8 +58,3 @@ Para correr este proyecto en tu entorno local, sigue estos pasos:
    ```
 
 5. **Abre tu navegador** en la dirección indicada en la terminal (usualmente `http://localhost:5173`).
-
-
-
----
-
